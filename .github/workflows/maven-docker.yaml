@@ -35,9 +35,10 @@ jobs:
           distribution: 'temurin'
 
       - name: Install lib Maven
-        run: |
-          chmod +x ./maven.sh
-          ./maven.sh
+        run: chmod +x ./maven.sh
+
+      - name: Run Shell
+        run : ./maven.sh
 
       - name: Build with Maven
         run: |
