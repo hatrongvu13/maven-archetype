@@ -23,7 +23,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://${DATABASE_POSTGRES_IP:192.168.1.10}:${POSTGRES_PORT:5432}/${DATABASE_SCHEMA:archetype}
+    url: ${DATASOURCE_URL:jdbc:postgresql://192.168.1.10:5432/archetype}
     username: ${POSTGRES_USERNAME:root}
     password: ${POSTGRES_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
