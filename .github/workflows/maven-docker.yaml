@@ -34,21 +34,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Configure Maven settings
-        run: |
-          mkdir -p ~/.m2
-          echo '<settings>
-                  <servers>
-                      <server>
-                          <id>github</id>
-                          <username>${{ github.actor }}</username>
-                          <password>${{ secrets.GITHUB_TOKEN }}</password>
-                      </server>
-                  </servers>
-              </settings>' > ~/.m2/settings.xml
-
-      - name: Clear Maven cache
-        run: rm -rf ~/.m2/repository/com/xxx/grpc-proto
+      - name: Install lib Maven
+        run: mvn install:install-file -Dfile='./lib/grpc-proto-0.0.1.jar' -DgroupId='com.xxx' -DartifactId='grpc-proto' -Dversion='0.0.1' -Dpackaging='jar' -DgeneratePom='true'
 
       - name: Build with Maven
         run: |
