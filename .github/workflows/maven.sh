@@ -1,1 +1,0 @@
-mvn install:install-file -Dfile='./lib/grpc-proto-0.0.1.jar' -DgroupId='com.xxx' -DartifactId='grpc-proto' -Dversion='0.0.1' -Dpackaging='jar' -DgeneratePom='true'

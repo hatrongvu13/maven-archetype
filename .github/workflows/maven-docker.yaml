@@ -34,8 +34,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Install lib Maven
-        run: ls -la
+      - name: chmod +x shell script
+        run: chmod +x ./lib/install_lib.sh
+
+      - name: run script custom
+        run: ./lib/install_lib.sh
 
       - name: Build with Maven
         run: |
