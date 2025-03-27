@@ -47,6 +47,9 @@ jobs:
                   </servers>
               </settings>' > ~/.m2/settings.xml
 
+      - name: Clear Maven cache
+        run: rm -rf ~/.m2/repository/com/xxx/grpc-proto
+
       - name: Build with Maven
         run: |
           mvn clean install -DskipTests=true -B -X -e
